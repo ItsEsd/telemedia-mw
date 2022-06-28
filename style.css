@@ -16,7 +16,7 @@ body {
 .collapsible{
   z-index:1; padding:10px;
   background-image:url('../images/backimg.gif');
-  background-color: #1f0246;
+  background-color: #313131;
   width:100%;
   position: fixed;
   background-repeat: repeat;
@@ -432,4 +432,15 @@ z-index:1000;
 }
 hr{
   max-width: 800px;
+}
+
+#reftelcon{
+  cursor:pointer;float:right;
+  margin-top:24px;
+  margin-right:20px;
+  color:white;font-size:14px;
+}
+
+#reftelcon:hover{
+  opacity: 0.6;
 }
