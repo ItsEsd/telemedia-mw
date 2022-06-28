@@ -37,6 +37,7 @@
     <div style="display:none;" id="myDiv">
       <!-----TOD MWALL News Feed----->
       <div class="telemhead">
+        <base target="_blank">
         <div id="exinfoin"></div>
         <div class="collapsible">
           <h4 style="display:inline-block;padding-top:5px;padding-left:2px;color:white;"> Tele Media</h4><svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16" style="color:white;float:left;padding:5px;">
@@ -83,10 +84,8 @@
           </div>
 </div>
     <script src="media.js"></script>
-   <!-- <script> -->
-      <!-- document.addEventListener('contextmenu', event => event.preventDefault()); -->
-    <!-- </script> -->
-    <script>
+   <script> 
+       document.addEventListener('contextmenu', event => event.preventDefault()); 
        jQuery(function(jQuery) {
     jQuery.fn.hScroll = function(amount) {
       amount = amount || 120;
