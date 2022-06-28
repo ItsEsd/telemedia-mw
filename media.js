@@ -47,6 +47,8 @@ function read_value_pic() {
       document.getElementById("vid").innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
     }
     
+    var exinf = json.records[0].ExamInfo;
+    document.getElementById("exinfoin").innerHTML = exinf;
     document.getElementById("loader_in").style.visibility = "hidden";
   });
 }
@@ -57,7 +59,7 @@ $(document).ready(function() {
     });
   });
 
-  jQuery(function($) {
+  $(function($) {
     $.fn.hScroll = function(amount) {
       amount = amount || 120;
       $(this).bind("DOMMouseScroll mousewheel", function(event) {
@@ -79,3 +81,5 @@ $(document).ready(function() {
         $('#feedholder').slideUp('fast');
     });
   });
+
+ 
