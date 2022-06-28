@@ -444,3 +444,36 @@ hr{
 #reftelcon:hover{
   opacity: 0.6;
 }
+
+#exinfoin{
+  padding-top:2px;
+  top:0px;right:0px;
+  position: fixed;
+  width:240px;
+  z-index:10000;
+  color:white;
+  /* height:40px; */
+  overflow-y:hidden;
+  overflow-x: visible;
+  white-space: nowrap;
+  vertical-align: text-top;
+  clear: both;
+  font-size: 14px;
+  height:30px;
+
+}
+
+#exinfoin::-webkit-scrollbar{
+  width: 4px;
+  height:4px;
+}
+#exinfoin::-webkit-scrollbar-button{
+  background-color: #0c09c9;;
+}
+
+#exinfoin::-webkit-scrollbar-thumb{
+  background-color: #83839c;
+}
+#exinfoin a{
+color:#a09f9f;
+}
