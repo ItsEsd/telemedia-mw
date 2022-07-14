@@ -17,6 +17,8 @@ function read_value_pic() {
   $('#inm1').empty();
   $('#inm2').empty();
   $('#vid').empty();
+  
+    $(".box").css('background-color','#000');
   document.getElementById("loader_in").style.visibility = "visible";
   document.getElementById("showhtml").style.display = "block";
   var url = urap + "?action=read";
