@@ -23,10 +23,21 @@ body {
   max-width:180px;
   margin-top:60px;
   border-radius: 50%;
-  padding:4px;
+  padding:6px;
   background-color: white;
-  box-shadow:0px 2px 10px 0px rgb(32, 3, 194);
   margin-bottom: 0px;
+  background: linear-gradient(135deg, #242424, #ff7f00, #efd336, #05a105, #6a6aff, #a121fd, #ab9eb7, #a81c1c);
+  background-size: 1600% 1600%;
+  animation: rainbowBackground 10s linear infinite;
+}
+
+@keyframes rainbowBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
 }
 
 #proimgtwo{
@@ -260,11 +271,13 @@ body {
     color: white;
     padding: 10px 10px;
     text-align: center;
-    display: block;
+    /* display: block; */
     width:100%;
     max-width: 800px;
     margin-top: 10px;
     font-size: 18px;
+    top:0;left:0;
+    position: sticky;
   }
 .telenewsblock{
   text-align: left;
@@ -275,16 +288,24 @@ body {
   min-height:120px;
 }
 .inm1con{
-  padding:5px;
-  padding-left:10px;
-  padding-right:10px;
+  text-align:left;
+  padding:10px;
+  /* padding-left:15px; */
+  /* padding-right:15px; */
   padding-bottom: 0px;
-  box-shadow:0 4px 10px 0 #555555ce;
-  border-radius: 10px;
+  box-shadow:0px 10px 20px 0 #8a8a8a7d;
+  border-radius: 5px;
   margin-bottom: 40px;
-  background-color: white;
-
+  background-color: #ffffff;
+max-height:500px;
+overflow-y: auto;
 }
+
+#inm1con::-webkit-scrollbar{
+  width: 4px;
+  height:4px;
+}
+
   a.readmore:hover,
   a.readmoren:hover {
     color: white; 
