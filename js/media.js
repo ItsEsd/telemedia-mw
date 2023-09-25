@@ -119,7 +119,7 @@ function getData(e){
     //   }
   
   // Exam Info /////////////////////////
-  
+  document.getElementById("exinfoin").innerHTML="";
   var ets = document.getElementById('exinfos');
   for(var k=1;k<=dnumbex;k++){
     var dataset = db+k;
