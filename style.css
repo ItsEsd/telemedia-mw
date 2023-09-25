@@ -337,6 +337,8 @@ overflow-y: auto;
 border: 0px;
 padding:5px;
 background: #05a105;
+color:black;
+border-radius: 0px;
 }
 #inm1con::-webkit-scrollbar{
   width: 4px;
