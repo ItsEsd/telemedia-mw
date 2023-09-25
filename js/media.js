@@ -37,10 +37,9 @@ function getData(e){
     var dnumbex = Object.keys(mdex).length;
    
   var db = 'data';
-  
+  document.getElementById("contntnv").innerHTML="";
   // Med News #1 /////////////////////
   
- 
   var maxMedia = dnumbmd1; 
     for (var a=[],i=0;i<maxMedia;++i) a[i]=i;
     function shuffle(array) {
@@ -59,6 +58,8 @@ function getData(e){
     var data = nwone[dataset];
     var innews = JSON.parse(data[0].InMedia1);
     document.getElementById("inm1").innerHTML = '<div class="inm1con"><p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr></div>';
+   
+    
     var fin;
     for(var d=0;d<a.length;d++){
       fin = a[d];
@@ -67,6 +68,8 @@ function getData(e){
         var data = nwone[dataset];
         var innews = JSON.parse(data[0].InMedia1);
         document.getElementById("inm1").innerHTML += '<div class="inm1con"><p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr></div>';
+        document.getElementById("contntnv").innerHTML +="<div class='cntntnvtt'>"+innews.conSiteName1+"</div>";
+      
       }
   }
 
@@ -84,7 +87,8 @@ function getData(e){
     var data = nwtwo[dataset];
     var innews = JSON.parse(data[0].InMedia2);
     document.getElementById("inm2").innerHTML += '<p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr> ';
-    }
+    document.getElementById("contntnv").innerHTML +="<div class='cntntnvtt'>"+innews.conSiteName1+"</div>";
+  }
   
   // Med Video  /////////////////////
   var vid = document.getElementById('vid');
@@ -131,3 +135,35 @@ function getData(e){
   document.getElementById("loader_in").style.visibility = "hidden";
   }
   
+
+
+  function searchWord() {
+    // Get the word to search for from the input field
+    const wordToSearch = document.getElementById("searchInput").value.toLowerCase();
+    if (wordToSearch.trim() === "") {
+        alert("Please enter a word to search for.");
+        return;
+    }
+
+    // Remove any existing highlights
+    const highlights = document.querySelectorAll(".highlight");
+    highlights.forEach(function (highlight) {
+        highlight.classList.remove("highlight");
+    });
+
+    // Create a regular expression to match the word with word boundaries
+    const wordPattern = new RegExp("\\b" + wordToSearch + "\\b", "gi");
+
+    // Find and highlight all occurrences of the word
+    const pageText = document.body.textContent.toLowerCase();
+    const matches = pageText.match(wordPattern);
+    if (matches) {
+        matches.forEach(function (match) {
+            const regex = new RegExp("\\b" + match + "\\b", "gi");
+            pageText.replace(regex, `<span class="highlight">${match}</span>`);
+        });
+        document.body.innerHTML = pageText;
+    } else {
+        alert("Word not found on the page.");
+    }
+}
