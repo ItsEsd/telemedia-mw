@@ -339,13 +339,14 @@ overflow-y: auto;
 .clsbtn{
   width:100%;
 border: 0px;
-padding:5px;
+padding:10px;
 background: #05a105;
 color:black;
 border-radius: 0px;
 }
-.clsbtn:active,.clsbtn:focus{
+.clsbtn:active,.clsbtn:focus,.clsbtn:hover{
   outline:none;
+  background: #06bc06;
 }
 .ftrvids{
   background: #ff0b0b5c;
