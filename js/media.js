@@ -1,6 +1,6 @@
 
 // M A S T R O W A L L /////////////////////
-
+'use strict';
 var rB = "https://script.google.com/macros/s/";
 var rShow = "AKfycbz9XUzdTUILZDwU_hy1_JdRyjvA7zgLYZl1smOuUw4WmwDL9BOrkLnIQqn5XybdGEpm/exec";
 
