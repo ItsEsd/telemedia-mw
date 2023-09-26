@@ -36,7 +36,7 @@ function getData(e){
     var dnumbqt = Object.keys(mdqt).length;
     var dnumbex = Object.keys(mdex).length;
    
-  var db = 'data';
+  var db = 'data';var pos=0;
   document.getElementById("contntnv").innerHTML="";
   // Med News #1 /////////////////////
   
@@ -67,9 +67,9 @@ function getData(e){
         var dataset = db+fin;
         var data = nwone[dataset];
         var innews = JSON.parse(data[0].InMedia1);
-        document.getElementById("inm1").innerHTML += '<div class="inm1con"><p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr></div>';
-        document.getElementById("contntnv").innerHTML +="<div class='cntntnvtt'>"+innews.conSiteName1+"</div>";
-      
+        document.getElementById("inm1").innerHTML += '<div class="inm1con pos-'+pos+'"><p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr></div>';
+        document.getElementById("contntnv").innerHTML +="<div class='cntntnvtt' onclick='consectm(this)'>"+innews.conSiteName1+"</div>";
+        pos=pos+1;
       }
   }
 
@@ -86,8 +86,9 @@ function getData(e){
     var dataset = db+k;
     var data = nwtwo[dataset];
     var innews = JSON.parse(data[0].InMedia2);
-    document.getElementById("inm2").innerHTML += '<p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr> ';
-    document.getElementById("contntnv").innerHTML +="<div class='cntntnvtt'>"+innews.conSiteName1+"</div>";
+    document.getElementById("inm2").innerHTML += '<p style="color:black;" class="telenewsblock pos-'+pos+'">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr> ';
+    document.getElementById("contntnv").innerHTML +="<div class='cntntnvtt' onclick='consectm(this)'>"+innews.conSiteName1+"</div>";
+    pos=pos+1;
   }
   
   // Med Video  /////////////////////
@@ -102,8 +103,10 @@ function getData(e){
     for (var m = 0; m < vslen; m++) {
     var link = invid.inmediamwallVid[m];
     var vidid = link; 
-    vid.innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
-  }  
+    vid.innerHTML += '<div class="iteam pos-'+pos+'"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
+  }
+  document.getElementById("contntnv").innerHTML +="<div class='cntntnvtt ftrvids' onclick='consectm(this)'>Featured Videos</div>";
+  pos=pos+1;  
   }
   
   // Quotes /////////////////////////
@@ -118,8 +121,10 @@ function getData(e){
         var y = Math.floor((Math.random() * 3) + 1);
         for (prop in inqt) {
             var link = inqt.dquoteWall[y];
-        document.getElementById("dquote").innerHTML = '<div class="qu">' + link + '</div> ';
-        }
+        document.getElementById("dquote").innerHTML = '<div class="qu pos-'+pos+'">' + link + '</div> ';
+        document.getElementById("contntnv").innerHTML +="<div class='cntntnvtt ftrdqts' onclick='consectm(this)'>Quotes</div>";
+      
+      }
     //   }
   
   // Exam Info /////////////////////////
@@ -135,35 +140,16 @@ function getData(e){
   document.getElementById("loader_in").style.visibility = "hidden";
   }
   
-
-
-  function searchWord() {
-    // Get the word to search for from the input field
-    const wordToSearch = document.getElementById("searchInput").value.toLowerCase();
-    if (wordToSearch.trim() === "") {
-        alert("Please enter a word to search for.");
-        return;
-    }
-
-    // Remove any existing highlights
-    const highlights = document.querySelectorAll(".highlight");
-    highlights.forEach(function (highlight) {
-        highlight.classList.remove("highlight");
-    });
-
-    // Create a regular expression to match the word with word boundaries
-    const wordPattern = new RegExp("\\b" + wordToSearch + "\\b", "gi");
-
-    // Find and highlight all occurrences of the word
-    const pageText = document.body.textContent.toLowerCase();
-    const matches = pageText.match(wordPattern);
-    if (matches) {
-        matches.forEach(function (match) {
-            const regex = new RegExp("\\b" + match + "\\b", "gi");
-            pageText.replace(regex, `<span class="highlight">${match}</span>`);
-        });
-        document.body.innerHTML = pageText;
-    } else {
-        alert("Word not found on the page.");
-    }
-}
+  function consectm(label){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    var list=document.getElementsByClassName("cntntnvtt");
+    list = [].slice.call(list); 
+    var posofq = list.indexOf(label);
+    var $container = $("html,body");
+    var $scrollTo = $('.pos-'+posofq);
+    
+    $container.animate({
+      scrollTop: $scrollTo.offset().top-90},0); 
+      $('#cntndvnv').slideUp();
+  }
