@@ -48,10 +48,11 @@
         break;
     }
   });
-  // if ( window.location !== window.parent.location ) {
-  //   if (document.referrer.includes('index.html')) {
-  //     document.getElementById('ftnote').style.display="none";
-  //   }
-  // }
+  if ( window.location !== window.parent.location ) {
+    if (document.referrer.includes('mastrowall.com') == false) {
+      console.log(document.referrer,document.referrer.includes('mastrowall.com'))
+      document.body.innerHTML="<div style='color:white;background:grey;width:100%;height:100vh;'><center style='padding-top:15%;'>©️<a target='_blank' style='color:white;' href='https://mastrowall.com'> M A S T R O W A L L</a></center></div>";
+    }
+  }
 
  
