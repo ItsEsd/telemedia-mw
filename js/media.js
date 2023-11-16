@@ -61,8 +61,6 @@ function getData(e){
     var data = nwone[dataset];
     var innews = JSON.parse(data[0].InMedia1);
     document.getElementById("inm1").innerHTML = '<div class="inm1con"><p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr></div>';
-   
-    // qr code content /////////////
     document.getElementById("inm1").innerHTML += '<div class="inm1confrm"><p class="telenewsblock"><iframe class="frmdcon" src="/qrcontent/index.html"></iframe></p></div>';
      var styles = {
       frmdcon: {
@@ -86,12 +84,9 @@ function getData(e){
       Object.assign(element.style, styles[elementClass]);
     });
 
-///////////////////////////
-
     var fin;
     for(var d=0;d<a.length;d++){
       fin = a[d]+1;
-      // if(fin!=0 && fin!=1 && fin!=2){
         if(fin!=0 && fin!=1){
         var dataset = db+fin;
         var data = nwone[dataset];
