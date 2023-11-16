@@ -1,5 +1,16 @@
  'use strict';
 
+  if (window.location !== window.parent.location) {
+  var allowedDomains = ['mastrowall.com', 'mastrowall.in'];
+  var isAllowedDomain = allowedDomains.some(function(domain) {
+      return document.referrer.includes(domain);
+  });
+
+  if (!isAllowedDomain) {
+      document.body.innerHTML="<div style='color:white;background:grey;width:100%;height:100vh;'><center style='padding-top:15%;'>©️<a target='_blank' style='color:white;' href='https://mastrowall.com'> M A S T R O W A L L</a></center></div>";
+  }
+  }
+
   fetch('content.json')
     .then(response => response.json())
     .then(data => {
@@ -41,18 +52,13 @@
     var target = e.target;
     switch (target.id) {
       case 'rgtscrl':
-        div.scrollLeft += 265;
+        div.scrollLeft += 295;
         break;
       case 'lftscrl':
         div.scrollLeft -= 295;
         break;
     }
   });
-  if ( window.location !== window.parent.location ) {
-    if (document.referrer.includes('mastrowall.com') == false) {
-      console.log(document.referrer,document.referrer.includes('mastrowall.com'))
-      document.body.innerHTML="<div style='color:white;background:grey;width:100%;height:100vh;'><center style='padding-top:15%;'>©️<a target='_blank' style='color:white;' href='https://mastrowall.com'> M A S T R O W A L L</a></center></div>";
-    }
-  }
+
 
  
