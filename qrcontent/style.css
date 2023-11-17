@@ -113,12 +113,20 @@ a,a:hover,a:active,a:focus{
   
   .link {
     display: block;
-    margin-top: 10px;
     text-decoration: none;
     color: #007bff; 
     font-weight: 100;
     font-size: 0.75rem;
    text-decoration: none;
+   padding:0px;
+   margin:0px;
+   margin-top: 5px;
+  }
+  .link svg{
+    margin:0px;
+    padding:0px;
+    width:14px;
+    display: inline-block;
   }
   a:hover{
     text-decoration: none;
@@ -223,8 +231,9 @@ color:#7a7a7a;
     border: none;
     cursor: pointer;
     outline:none;
+    display: block;
   }
-  .scroll-button:active,.scroll-button:focus {outline:none;}
+  .scroll-button:active,.scroll-button:focus{outline:none;background-color: #19b93e;}
   .qrcbtnright{
     position: fixed;
     top: 210px;
@@ -237,6 +246,16 @@ color:#7a7a7a;
     top: 260px;
     right: 0;
    
+  }
+  .qrcbtnleft img{
+    rotate: 180deg;
+    width:20px;
+    filter: invert(1);
+  }
+  .qrcbtnright img{
+    rotate: 0deg;
+    width:20px;
+    filter: invert(1);
   }
   #ftnote{
    margin-top:20px;
