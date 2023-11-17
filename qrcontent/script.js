@@ -1,7 +1,7 @@
  'use strict';
 
   if (window.location !== window.parent.location) {
-  var allowedDomains = ['mastrowall.com', 'mastrowall.in'];
+  var allowedDomains = ['mastrowall.com', 'mastrowall.in','google.com'];
   var isAllowedDomain = allowedDomains.some(function(domain) {
       return document.referrer.includes(domain);
   });
