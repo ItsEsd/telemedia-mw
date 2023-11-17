@@ -14,8 +14,9 @@
   fetch('content.json')
     .then(response => response.json())
     .then(data => {
+      const dlen = data.length;
       data.sort(() => Math.random() - 0.5);
-      const randomItems = data.slice(0, 5);
+      const randomItems = data.slice(0, dlen);
       const galleryContainer = document.getElementById('galleryContainer');
       randomItems.forEach((item) => {
         const flexItem = document.createElement('div');
@@ -36,11 +37,11 @@
     var modalCaption = document.querySelector('#qrconlightbx .qrcon-caption');
     var modalDate = document.querySelector('#qrconlightbx .qrcon-date');
     var modalDetails = document.querySelector('#qrconlightbx .qrcon-details');
-
+    var contentdtls =decodeURIComponent(String(details));
     modalImage.src = imageSrc;
-    modalCaption.textContent = `${caption}`;
+    modalCaption.textContent = `Source: ${caption}`;
     modalDate.textContent = `Date: ${date}`;
-    modalDetails.textContent = `${details}`;
+    modalDetails.innerHTML = contentdtls;
 
     var lightbox = new bootstrap.Modal(document.getElementById('qrconlightbx'));lightbox.show();
     
