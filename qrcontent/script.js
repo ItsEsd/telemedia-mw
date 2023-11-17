@@ -24,7 +24,7 @@
         flexItem.innerHTML = `
           <div onclick="openModal('${item.image}', '${item.caption}', '${item.date}', '${item.details}')">
             <div class="flex-imgcon"><img src="${item.image}" alt="${item.caption}" class="img-fluid"></div>
-            <div class="caption">${item.caption}<br><a href="#" class="link">Know More ⏵</a></div>
+            <div class="caption">${item.caption}<br><a href="#" class="link">Know More &#9205;</a></div>
           </div>
         `;
       
