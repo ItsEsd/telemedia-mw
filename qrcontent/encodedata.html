@@ -46,9 +46,9 @@
     <div class="qrcntncon">
     <div class="row" style="width:100%"><div class="col-md-4">
     <h4>QR Content - Add Data</h4>
-    <form id="dataForm">
+    <form id="dataForm" autocomplete="off">
     <label for="image">Image URL:</label>
-    <input type="url" id="image" name="image" required><br>
+    <input type="text" id="image" name="image" required><br>
 
     <label for="caption">Caption:</label>
     <input type="text" id="caption" name="caption" required><br>
@@ -80,7 +80,7 @@
     var image = $('#image').val();
     var caption = $('#caption').val();
     var date = $('#date').val();
-    var details = escape($('#details').val());
+    var details = encodeURIComponent(escape($('#details').val()));
     var newData = {
     "image": image,
     "caption": caption,

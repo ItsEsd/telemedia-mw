@@ -39,11 +39,11 @@
     var modalCaption = document.querySelector('#qrconlightbx .qrcon-caption');
     var modalDate = document.querySelector('#qrconlightbx .qrcon-date');
     var modalDetails = document.querySelector('#qrconlightbx .qrcon-details');
-    var contentdtls =decodeURIComponent(String(details));
+    var contentdtls =decodeURIComponent((String(details)));
     modalImage.src = imageSrc;
     modalCaption.textContent = `Source: ${caption}`;
     modalDate.textContent = `Date: ${date}`;
-    modalDetails.innerHTML = contentdtls;
+    modalDetails.innerHTML = unescape(contentdtls);
 
     var lightbox = new bootstrap.Modal(document.getElementById('qrconlightbx'));lightbox.show();
     
