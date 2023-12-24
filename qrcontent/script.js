@@ -44,7 +44,7 @@
     modalCaption.textContent = `Source: ${caption}`;
     modalDate.textContent = `Date: ${date}`;
     modalDetails.innerHTML = unescape(contentdtls);
-
+    $('.qrcon-details').animate({scrollTop: 0}, 10);
     var lightbox = new bootstrap.Modal(document.getElementById('qrconlightbx'));lightbox.show();
     
   }
