@@ -79,12 +79,26 @@ html {
 }
 .collapsible {
   z-index: 10;
-  padding: 10px;
+  padding: 5px;
   background-image: url("../images/backimg.gif");
   background-color: #313131;
   width: 100%;
   position: fixed;
   background-repeat: repeat;
+}
+.collapsible h5 {
+  margin-top: 5px;
+}
+.collapsible svg {
+  color: #ffffffb4;
+  float: left;
+  margin: 5px;
+  margin-top: 10px;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.collapsible h5:hover {
+  opacity: 0.6;
 }
 #loader {
   position: absolute;
@@ -350,7 +364,7 @@ a:hover {
   overflow-y: auto;
 }
 #cntndvnv {
-  top: 60px;
+  top: 58px;
   left: 0px;
   position: fixed;
   height: 100%;
@@ -363,6 +377,10 @@ a:hover {
   text-align: left;
   word-wrap: break-word;
   margin-bottom: -600px;
+}
+#contntnv {
+  display: block;
+  min-height: 44vh;
 }
 .cntntnvtt {
   color: white;
@@ -377,9 +395,9 @@ a:hover {
   background: #ffffff1f;
 }
 #contnvtitl {
-  bottom: 0px;
+  /* bottom: 0px;
   left: 0px;
-  position: sticky;
+  position: sticky; */
 }
 .clsbtn {
   width: 100%;
@@ -540,6 +558,10 @@ img {
   position: fixed;
   z-index: 10;
 }
+#newsfeed span {
+  margin-top: 4px;
+  font-size: 14px;
+}
 #newsfeed button {
   background-color: #666464;
   border: 0px;
@@ -553,14 +575,14 @@ img {
 }
 
 #feedicon {
-  width: 50px;
+  width: 40px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0px 2px 6px 1px #c4c1c19f;
+  box-shadow: 0px 2px 6px 1px #c4c1c17b;
 }
 
 #feedholder {
-  top: 60px;
+  top: 57px;
   left: 0px;
   width: 100%;
   height: 100%;
@@ -595,7 +617,7 @@ img {
 }
 #info {
   width: 100%;
-  font-size: 14px;
+  font-size: 12px;
   float: left;
   text-align: left;
   padding-left: 10px;
@@ -604,7 +626,10 @@ img {
   color: #a09f9f;
   bottom: 0px;
   position: fixed;
-  height: 50px;
+}
+#info p {
+  padding: 5px;
+  margin: 0px;
 }
 #info a {
   color: #dfdfdf;
@@ -623,6 +648,7 @@ hr {
   margin-right: 20px;
   color: white;
   font-size: 14px;
+  margin-top: 28px;
 }
 
 #reftelcon:hover {
@@ -637,7 +663,6 @@ hr {
   width: 200px;
   z-index: 10000;
   color: white;
-  /* height:40px; */
   overflow-y: hidden;
   overflow-x: scroll;
   white-space: nowrap;
@@ -700,4 +725,32 @@ hr {
 
 .box::-webkit-scrollbar-track {
   background-color: #dbdbdbc2;
+}
+
+@media screen and (max-width: 600px) {
+  .collapsible h5 {
+    font-size: 16px;
+    margin-top: 7px;
+  }
+  .collapsible svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 12px;
+  }
+  #info {
+    font-size: 10px;
+  }
+  #reftelcon {
+    font-size: 12px;
+  }
+  #exinfoin {
+    font-size: 12px;
+    width: 140px;
+  }
+  #feedholder {
+    top: 53px;
+  }
+  #cntndvnv {
+    top: 56px;
+  }
 }
